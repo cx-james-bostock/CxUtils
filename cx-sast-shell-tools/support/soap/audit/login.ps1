@@ -35,7 +35,7 @@ $body = [String]::Format($xml_template, $username, $password, $(Get-WinSystemLoc
 
 $session = @{}
 
-$response = Invoke-WebRequest -ContentType "text/xml" -Method "Post" -Headers $headers -Body $body -Uri $soap_url
+$response = Invoke-WebRequest -ContentType "text/xml" -Method "Post" -Headers $headers -Body $body -Uri $soap_url -UseBasicParsing
 
 if (200 -eq $response.StatusCode) {
     $payload = New-Object System.Xml.XmlDocument
