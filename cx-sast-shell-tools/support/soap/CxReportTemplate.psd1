@@ -12,6 +12,7 @@
 
     resultSeverity = @{
         all = 0
+        critical = 1
         high = 1
         medium = 1
         low = 1

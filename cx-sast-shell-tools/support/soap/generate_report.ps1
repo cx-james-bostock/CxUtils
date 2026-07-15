@@ -42,76 +42,77 @@ $xml_template = @"
                </chec:Queries>
                <chec:ResultsSeverity>
                   <chec:All>{5}</chec:All>
-                  <chec:High>{6}</chec:High>
-                  <chec:Medium>{7}</chec:Medium>
-                  <chec:Low>{8}</chec:Low>
-                  <chec:Info>{9}</chec:Info>
+                  <chec:Critical>{6}</chec:Critical>
+                  <chec:High>{7}</chec:High>
+                  <chec:Medium>{8}</chec:Medium>
+                  <chec:Low>{9}</chec:Low>
+                  <chec:Info>{10}</chec:Info>
                </chec:ResultsSeverity>
                
                <chec:ResultsState>
-                  <chec:All>{10}</chec:All>
+                  <chec:All>{11}</chec:All>
                   
                   <chec:IDs>
                      <!--Zero or more repetitions:-->
-                     <chec:long>{11}</chec:long>
+                     <chec:long>{12}</chec:long>
                   </chec:IDs>
                </chec:ResultsState>
                
                <chec:DisplayCategories>
-                  <chec:All>{12}</chec:All>
+                  <chec:All>{13}</chec:All>
                   
                   <chec:IDs>
                      <!--Zero or more repetitions:-->
-                     <chec:long>{13}</chec:long>
+                     <chec:long>{14}</chec:long>
                   </chec:IDs>
                </chec:DisplayCategories>
                
                <chec:ResultsAssigedTo>
-                  <chec:All>{14}</chec:All>
+                  <chec:All>{15}</chec:All>
                   
                   <chec:IDs>
                      <!--Zero or more repetitions:-->
-                     <chec:long>{15}</chec:long>
+                     <chec:long>{16}</chec:long>
                   </chec:IDs>
                   
                   <chec:Usernames>
                      <!--Zero or more repetitions:-->
-                     <chec:string>{16}</chec:string>
+                     <chec:string>{17}</chec:string>
                   </chec:Usernames>
                </chec:ResultsAssigedTo>
                
                <chec:ResultsPerVulnerability>
-                  <chec:All>{17}</chec:All>
-                  <chec:Maximimum>{18}</chec:Maximimum>
+                  <chec:All>{18}</chec:All>
+                  <chec:Maximimum>{19}</chec:Maximimum>
                </chec:ResultsPerVulnerability>
                
                <chec:HeaderOptions>
-                  <chec:Link2OnlineResults>{19}</chec:Link2OnlineResults>
-                  <chec:Team>{20}</chec:Team>
-                  <chec:CheckmarxVersion>{21}</chec:CheckmarxVersion>
-                  <chec:ScanComments>{22}</chec:ScanComments>
-                  <chec:ScanType>{23}</chec:ScanType>
-                  <chec:SourceOrigin>{24}</chec:SourceOrigin>
-                  <chec:ScanDensity>{25}</chec:ScanDensity>
+                  <chec:Link2OnlineResults>{20}</chec:Link2OnlineResults>
+                  <chec:Team>{21}</chec:Team>
+                  <chec:CheckmarxVersion>{22}</chec:CheckmarxVersion>
+                  <chec:ScanComments>{23}</chec:ScanComments>
+                  <chec:ScanType>{24}</chec:ScanType>
+                  <chec:SourceOrigin>{25}</chec:SourceOrigin>
+                  <chec:ScanDensity>{26}</chec:ScanDensity>
                </chec:HeaderOptions>
                
                <chec:GeneralOption>
-                  <chec:OnlyExecutiveSummary>{26}</chec:OnlyExecutiveSummary>
-                  <chec:TableOfContents>{27}</chec:TableOfContents>
-                  <chec:ExecutiveSummary>{28}</chec:ExecutiveSummary>
-                  <chec:DisplayCategories>{29}</chec:DisplayCategories>
-                  <chec:DisplayLanguageHashNumber>{30}</chec:DisplayLanguageHashNumber>
-                  <chec:ScannedQueries>{31}</chec:ScannedQueries>
-                  <chec:ScannedFiles>{32}</chec:ScannedFiles>
-                  <chec:VulnerabilitiesDescription>{33}</chec:VulnerabilitiesDescription>
+                  <chec:OnlyExecutiveSummary>{27}</chec:OnlyExecutiveSummary>
+                  <chec:TableOfContents>{28}</chec:TableOfContents>
+                  <chec:ExecutiveSummary>{29}</chec:ExecutiveSummary>
+                  <chec:DisplayCategories>{30}</chec:DisplayCategories>
+                  <chec:DisplayLanguageHashNumber>{31}</chec:DisplayLanguageHashNumber>
+                  <chec:ScannedQueries>{32}</chec:ScannedQueries>
+                  <chec:ScannedFiles>{33}</chec:ScannedFiles>
+                  <chec:VulnerabilitiesDescription>{34}</chec:VulnerabilitiesDescription>
                </chec:GeneralOption>
                
                <chec:ResultsDisplayOption>
-                  <chec:AssignedTo>{34}</chec:AssignedTo>
-                  <chec:Comments>{35}</chec:Comments>
-                  <chec:Link2Online>{36}</chec:Link2Online>
-                  <chec:ResultDescription>{37}</chec:ResultDescription>
-                  <chec:SnippetsMode>{38}</chec:SnippetsMode>
+                  <chec:AssignedTo>{35}</chec:AssignedTo>
+                  <chec:Comments>{36}</chec:Comments>
+                  <chec:Link2Online>{37}</chec:Link2Online>
+                  <chec:ResultDescription>{38}</chec:ResultDescription>
+                  <chec:SnippetsMode>{39}</chec:SnippetsMode>
                </chec:ResultsDisplayOption>
             </chec:DisplayData>
          </chec:Report>
@@ -127,6 +128,7 @@ $body = [String]::Format($xml_template,
                         $ReportTemplate.queries.all,
                         $ReportTemplate.queries.ids,
                         $ReportTemplate.resultSeverity.all,
+                        $ReportTemplate.resultSeverity.critical,
                         $ReportTemplate.resultSeverity.high,
                         $ReportTemplate.resultSeverity.medium,
                         $ReportTemplate.resultSeverity.low,
